@@ -48,7 +48,7 @@ const MutationType = new GraphQLObjectType({
         phone: { type: GraphQLString },
         logoBase64: { type: GraphQLString },
       },
-      resolve: (_, args) => {
+      resolve: (parent, args) => {
         const id = Date.now().toString();   
         const user = { id, ...args };
         users.push(user);
